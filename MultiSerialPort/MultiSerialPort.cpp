@@ -7,13 +7,14 @@ MultiSerialPort::MultiSerialPort(QWidget* parent)
 {
 	ui.setupUi(this);
 	setWindowIcon((QIcon)"myapp.ico");
-
+	setWindowTitle("多路串口调试V1.0");
 	//QTableWidgetItem* item;
 	//item = new QTableWidgetItem("13");
 	//ui.tableWidget->insertColumn(2);
 	//ui.tableWidget->setHorizontalHeaderItem(2, item);
 	setTable();
 	refreshOnclicked();
+	
 }
 
 void MultiSerialPort::openOnclicked()
@@ -227,4 +228,13 @@ void MultiSerialPort::setTable()
 		}
 		ui.tableWidget->setHorizontalHeaderItem(i, item);
 	}
+}
+void MultiSerialPort::actionHelpOnclicked()
+{
+	QMessageBox::information(this,"提示","本程序是一个多路串口调试工具\n支持多路串口(理论上支持500个串口\n不过可能电脑CPU会燃烧)",QMessageBox::Ok);
+}
+
+void MultiSerialPort::actionAboutOnclicked()
+{
+	QMessageBox::information(this, "关于", "V1.0版本\nBy-->hellonone", QMessageBox::Ok);
 }

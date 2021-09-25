@@ -1,15 +1,16 @@
 /********************************************************************************
-** Form generated from reading UI file 'MultiSerialPortDgeHYf.ui'
+** Form generated from reading UI file 'MultiSerialPortddLISC.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.1.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef MULTISERIALPORTDGEHYF_H
-#define MULTISERIALPORTDGEHYF_H
+#ifndef MULTISERIALPORTDDLISC_H
+#define MULTISERIALPORTDDLISC_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
@@ -19,6 +20,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
@@ -32,6 +34,8 @@ QT_BEGIN_NAMESPACE
 class Ui_MultiSerialPortClass
 {
 public:
+    QAction *actionAbout;
+    QAction *actionHelp;
     QWidget *centralWidget;
     QGridLayout *gridLayout_3;
     QFrame *frame;
@@ -82,12 +86,17 @@ public:
     QPushButton *pushButton_Send;
     QPushButton *pushButton_ClearSend;
     QMenuBar *menuBar;
+    QMenu *menu;
 
     void setupUi(QMainWindow *MultiSerialPortClass)
     {
         if (MultiSerialPortClass->objectName().isEmpty())
             MultiSerialPortClass->setObjectName(QString::fromUtf8("MultiSerialPortClass"));
         MultiSerialPortClass->resize(764, 662);
+        actionAbout = new QAction(MultiSerialPortClass);
+        actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
+        actionHelp = new QAction(MultiSerialPortClass);
+        actionHelp->setObjectName(QString::fromUtf8("actionHelp"));
         centralWidget = new QWidget(MultiSerialPortClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         gridLayout_3 = new QGridLayout(centralWidget);
@@ -441,9 +450,15 @@ public:
         menuBar = new QMenuBar(MultiSerialPortClass);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 764, 22));
+        menu = new QMenu(menuBar);
+        menu->setObjectName(QString::fromUtf8("menu"));
         MultiSerialPortClass->setMenuBar(menuBar);
 #if QT_CONFIG(shortcut)
 #endif // QT_CONFIG(shortcut)
+
+        menuBar->addAction(menu->menuAction());
+        menu->addAction(actionHelp);
+        menu->addAction(actionAbout);
 
         retranslateUi(MultiSerialPortClass);
         QObject::connect(pushButton_clearRecieve, SIGNAL(clicked()), MultiSerialPortClass, SLOT(clearRecieveOnclicked()));
@@ -458,6 +473,8 @@ public:
         QObject::connect(pushButton_ClearSend, SIGNAL(clicked()), MultiSerialPortClass, SLOT(clearSendOnclicked()));
         QObject::connect(pushButton_Send, SIGNAL(clicked()), MultiSerialPortClass, SLOT(sendOnclicked()));
         QObject::connect(comboBox_Channel, SIGNAL(currentTextChanged(QString)), MultiSerialPortClass, SLOT(channelChanged()));
+        QObject::connect(actionHelp, SIGNAL(triggered()), MultiSerialPortClass, SLOT(actionHelpOnclicked()));
+        QObject::connect(actionAbout, SIGNAL(triggered()), MultiSerialPortClass, SLOT(actionAboutOnclicked()));
 
         comboBox_Baud->setCurrentIndex(5);
 
@@ -468,6 +485,8 @@ public:
     void retranslateUi(QMainWindow *MultiSerialPortClass)
     {
         MultiSerialPortClass->setWindowTitle(QCoreApplication::translate("MultiSerialPortClass", "MultiSerialPort", nullptr));
+        actionAbout->setText(QCoreApplication::translate("MultiSerialPortClass", "About", nullptr));
+        actionHelp->setText(QCoreApplication::translate("MultiSerialPortClass", "Help", nullptr));
         label_2->setText(QCoreApplication::translate("MultiSerialPortClass", "\345\275\223\345\211\215\351\200\211\344\270\255\345\206\205\345\256\271", nullptr));
         pushButton_clearRecieve->setText(QCoreApplication::translate("MultiSerialPortClass", "\346\270\205\351\231\244\346\216\245\346\224\266\345\214\272", nullptr));
         pushButton_Refresh->setText(QCoreApplication::translate("MultiSerialPortClass", "\345\210\267\346\226\260\344\270\262\345\217\243", nullptr));
@@ -533,6 +552,7 @@ public:
         label_RecieveCount->setText(QCoreApplication::translate("MultiSerialPortClass", "Recieve\357\274\232             ", nullptr));
         pushButton_Send->setText(QCoreApplication::translate("MultiSerialPortClass", "\345\217\221\351\200\201", nullptr));
         pushButton_ClearSend->setText(QCoreApplication::translate("MultiSerialPortClass", "\346\270\205\351\231\244\345\217\221\351\200\201", nullptr));
+        menu->setTitle(QCoreApplication::translate("MultiSerialPortClass", "\345\270\256\345\212\251", nullptr));
     } // retranslateUi
 
 };
@@ -543,4 +563,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // MULTISERIALPORTDGEHYF_H
+#endif // MULTISERIALPORTDDLISC_H

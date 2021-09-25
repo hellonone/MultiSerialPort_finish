@@ -826,7 +826,25 @@ p, li { white-space: pre-wrap; }
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="actionHelp"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menu"/>
   </widget>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
@@ -1025,6 +1043,38 @@ p, li { white-space: pre-wrap; }
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionHelp</sender>
+   <signal>triggered()</signal>
+   <receiver>MultiSerialPortClass</receiver>
+   <slot>actionHelpOnclicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>381</x>
+     <y>330</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAbout</sender>
+   <signal>triggered()</signal>
+   <receiver>MultiSerialPortClass</receiver>
+   <slot>actionAboutOnclicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>381</x>
+     <y>330</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>clearRecieveOnclicked()</slot>
@@ -1039,5 +1089,7 @@ p, li { white-space: pre-wrap; }
   <slot>sendOnclicked()</slot>
   <slot>clearSendOnclicked()</slot>
   <slot>channelChanged()</slot>
+  <slot>actionHelpOnclicked()</slot>
+  <slot>actionAboutOnclicked()</slot>
  </slots>
 </ui>

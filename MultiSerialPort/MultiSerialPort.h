@@ -32,6 +32,8 @@ public slots:
 	void dealSendSucces();
 	void clearSendOnclicked();
 	void channelChanged();
+	void actionHelpOnclicked();
+	void actionAboutOnclicked();
 
 private:
 	Ui::MultiSerialPortClass ui;
