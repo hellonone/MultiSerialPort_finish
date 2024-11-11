@@ -40,6 +40,10 @@
 2. 添加一个或多个通道，根据需要进行串口通信调试。
 3. 通过界面中的“发送”按钮发送数据，接收区会实时显示接收到的数据。
 
+### 程序界面
+
+![image](https://github.com/hellonone/MultiSerialPort_finish/blob/master/programImage.png)
+
 ## 项目结构
 
 - `main.cpp`：程序入口
