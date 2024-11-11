@@ -40,6 +40,10 @@ This project is a multi-serial port debug assistant developed with Qt, supportin
 2. Add one or more channels as needed for serial communication debugging.
 3. Use the "Send" button to transmit data, and the receive area will display the data received in real-time.
 
+### Program
+
+![image](https://github.com/hellonone/MultiSerialPort_finish/blob/master/programImage.png)
+
 ## Project Structure
 
 - `main.cpp`: Program entry point
